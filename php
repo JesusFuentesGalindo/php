@@ -3,10 +3,11 @@ Funciones-------
 return: Se utiliza dentro de una función para retornar al flujo desde donde fue
 llamada y opcionalmente un valor.
 
-function nombreFuncion(type $param,$$referencia,$generico,$opcional='val'){return $val;}: Define una función.
+@function nombreFuncion(type $param,$$referencia,$generico,$opcional='val'){return $val;}: Define una función.
   - Parametro generico: No agregar tipo de dato.
   - parametro opcional: Agregar un valor al por defecto al parametro, se deben agregar al final de la declaración.
   - Parametro por referencia: Se agrega el signo de dolar antes de la definición del parametro.
+  - @ para suprimir los warning.
 
 global: Permite el uso de una variable global dentro de una función.
   $variableGlobal='';
@@ -194,3 +195,100 @@ Preparar el fichero de procesamiento.
     -$temporal=$fichero['tmp_name']: Nombre del fichero temporal en el servidor.
   - move_upload_file[$temporal,$destino.$nombreFichero]: Copiar el fichero en
   el destino.
+
+POO-----
+Paradigma de programación orientado a objetos.
+
+Conceptos básicos.
+  - Clases: Molde.
+    - Métodos.
+    - Atributos.
+    - Constructor.
+    - Destructor.
+    - Sobrecarga.
+  - Objetos.
+  - Abstracción.
+  - Encapsulación.
+  - Herencia.
+  - Polimorfismo.
+
+Clases, Objetos, Métodos y Propiedades.
+  class NombreClase{}: Define una clase.
+  public $nombreAtributo: Define un atributo.
+    Modificador de acceso.
+    Se pueden inicializar a tipos primitivos.
+  public function nombreFuncion(){}: Define un metodo.
+    Modificador de acceso.
+  this: Representa el objeto actual.
+  $objeto=new NombreClase(): Crea un objeto de una clase.
+  $objeto->nombreFuncion(): Llama a un metodo del objeto.
+  $objeto->nombreAtributo: Lee un atributo del objeto.
+  public function __construct(){}: Define un constructor.
+    - No retorna resultado.
+    - Solo acceso publico.
+  get_class_methods($clase): Recupera los métodos de una clase.
+  method_exists($clase,$nombreMetodo): Verifica si un método existe.
+  Constantes.
+    - __CLASS__:
+    - __DIR__:
+    - __FILE__:
+    - __FUNCTION__:
+    - __LINE__:
+    - __METHOD__:
+    - __NAMESPACE__:
+    - __TRAIT__:
+
+  Modificador de acceso.
+    - public: Acceso publico.
+    - private: Acceso privado.
+    - protected: Acceso protejido.
+
+Herencia.
+    class nombreClase extends nombreClase2{}: Herencia de clases.
+    parent::nombreFuncion(): Llama una función padre.
+    parent::nombreAtributo: Llama a un atributo padre.
+
+Clases estáticas, abstracción e interfaces.
+  public static nombreFuncion(){}: Define un método de clase.
+  public static nombreAtributo: Define un atributo de clase.
+  selft::nombreFuncion(): Llama a un método de clase dentro de la clase.
+  selft::nombreAtributo: Llama a un atributo de clase dentro de la clase.
+  NombreClase::nombreFuncion(): Llama a un método de clase fuera de la clase.
+  NombreClase::nombreAtributo: Llama a un atributo de clase fuera de la clase.
+  const NOMBRE_CONSTANTE='val': Define una constante de clase.
+  NombreClase::NOMBRE_CONSTANTE: Llama a una constante de clase fuera de la clase.
+  abstract class NombreClase{}: Define una clase abstracta.
+    - Puede mantener métodos abstractos o métodos normales.
+  abstract public function(): Define un método abstracto.
+  interface NombreInterface{}: Define una interface.
+  class NombreClase implements NombreInterface{}: Implementa una interface.
+
+Métodos mágicos
+Forma parte del ciclo de vida del objeto.
+  Trait: Permite definir funcionalidad que se puede compartir entre clases.
+  trait NombreTrait{}: Define un trait.
+    - En el cuerpo del trait se define la funcionalidad que se desea compartir.
+  use NombreTrait: Utiliza un trait.
+    - Se utiliza dentro del cuerpo de una función.
+  public function __destruct(){}: Define un destructor.
+  public function __toString(){}: Define la impresion del objeto.
+  public function __call(){}: Define la funcionalidad al llamar a un método inexistente del objeto.
+
+Excepsiones.
+  throw new Exception($mensaje,$codigo,$excepcion): Lanza una nueva excepción.
+  try{}catch(Exception $excepcion){}finally{}: Captura excepciones.
+
+Autocarga de clases.
+  function autoload($class){
+
+    require_once $class.'.php';
+  }: Definición de una función para carga de clases.
+  spl_autoload_register('autoload'): Registra la función de carga de clases.
+    - Puede registrar varios autoloads.
+
+Espacios de nombres.
+  namespace espacionombre: Define un espacio de nombres.
+    - Se utiliza al principio de un archivo, justo despues de la etiqueta "php".
+  use espacionombre\NombreClase: Usa un objeto dentro de un espacio de nombres
+  use espacionombre\NombreClase as alias: Usa un objeto dentro de un espacio de nombres con un alias.
+  class_exists($clase): Cumprueba si la clase existe.
