@@ -292,3 +292,37 @@ Espacios de nombres.
   use espacionombre\NombreClase: Usa un objeto dentro de un espacio de nombres
   use espacionombre\NombreClase as alias: Usa un objeto dentro de un espacio de nombres con un alias.
   class_exists($clase): Cumprueba si la clase existe.
+
+MVC (Modelo Vista Controlador)-----
+  - Modelo en tres capas.
+  - Patrón de arquitectura.
+
+Que es y como funciona.
+Implementación.
+  - Controlador: Repositorio de objetos de control de elementos del sistema (acciones).
+  - Modelo: Repositorio de objetos de gestion de atributos de elementos del sistema (tareas).
+  - Vista: Repositorio de objetos de gestión de presentación de elementos del sistema.
+  - ControladorFrontal: Procesa las solicitudes que hacen al sistema (actividades).
+
+Controlador Frontal.
+
+Autocarga de clases.
+MySQLi.
+Modelos y consultas.
+
+Librerias-----
+Composer
+Generar PDF
+Crear páginación
+Manipular imagenes.
+FirePHP
+  - Instalar la libreria firephp/firephp-core
+  - Instalar el plugin fire php 4 chrome.
+  FB::log($valor): envia el valor al  explorador.
+Investigación.
+  - Librerias Excel.
+  - phpmailer
+  - swiftmailer.
+  - twig
+  - phpfast
+  - 
